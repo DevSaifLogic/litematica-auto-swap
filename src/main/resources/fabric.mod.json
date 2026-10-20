@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "autoswap",
+  "name": "Litematica Auto Swap",
+  "version": "${version}",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.vondx.autoswap.LitematicaAutoSwapClient"
+    ],
+    "modmenu": [
+      "com.vondx.autoswap.AutoSwapModMenu"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*",
+    "litematica": "*",
+    "malilib": "*"
+  }
+}

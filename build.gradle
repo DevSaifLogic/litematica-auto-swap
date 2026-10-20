@@ -1,0 +1,47 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.18-SNAPSHOT'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        "autoswap" {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+repositories {
+    maven { url = "https://api.modrinth.com/maven" }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // Fabric API
+    implementation "net.fabricmc.fabric-api:fabric-api:0.161.0+26.2"
+
+    // Litematica and Malilib dependencies for compilation
+    compileOnly "maven.modrinth:malilib:0.29.6"
+    compileOnly "maven.modrinth:litematica:0.28.8"
+    compileOnly "maven.modrinth:modmenu:20.0.3"
+}
+
+processResources {
+    inputs.property "version", project.version
+    filteringCharset "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+}

@@ -1,0 +1,12 @@
+{
+  "key.autoswap.trigger": "Swap to Schematic Block",
+  "key.autoswap.open_config": "Open AutoSwap Settings",
+  "screen.autoswap.config.title": "Litematica AutoSwap",
+  "screen.autoswap.config.immediate": "Swap automatically while looking: %s",
+  "screen.autoswap.config.interval": "Swap interval: %s ms",
+  "screen.autoswap.config.missing_message": "Show red message when block is missing: %s",
+  "screen.autoswap.config.tool_guard": "Pause while holding a tool: %s",
+  "screen.autoswap.config.key": "Swap key: %s",
+  "screen.autoswap.config.key.waiting": "Press a key (Esc to cancel)",
+  "message.autoswap.missing": "Missing required block: %s"
+}
